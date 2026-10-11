@@ -1,0 +1,7 @@
+ID;Nama;Nomor_HP
+K01;Budi Santoso;0997654454
+K02;Ucup;089876543210
+K03;Kontak Rusak;123
+K01;Budi Santoso;0997654454
+K02;Ucup;089876543210
+K03;Kontak Rusak;123
