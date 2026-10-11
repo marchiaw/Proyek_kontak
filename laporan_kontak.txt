@@ -1,7 +1,6 @@
-Total Kontak Tersimpan: 4 Kontak
+Total Kontak Tersimpan: 3 Kontak
 
 Daftar Kontak (A-Z):
-- Budi Santoso 0997654454
-- Budi Santoso 0997654454
-- Ucup 089876543210
-- Ucup 089876543210
+- Budi Santoso 0997654454 (teman)
+- Mar 0898788883210 (Sahabat)
+- Ucup 089876543210 (Teman)
