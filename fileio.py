@@ -4,7 +4,7 @@ from kontak_app.validasi import KontakError, validasi_kontak
 def inisialisasi_file(file_path):
     try:
         with open(file_path, "x") as file:
-            file.write("ID;Nama;Nomor_HP\n")
+            file.write("ID;Nama;Nomor_HP;Hubungan\n")
     except FileExistsError:
         pass
 
