@@ -7,6 +7,7 @@ class kontak:
         self.nama = nama
         self.nomor_hp = nomor_hp
         self.hubungan = hubungan
+        self.kwargs = kwargs
 
     def format_baris(self):
         return f"{self.id_kontak};{self.nama};{self.nomor_hp};{self.hubungan}\n"
