@@ -3,7 +3,6 @@ from processing import kontak, PengelolaKontak
 from validasi import KontakError, validasi_kontak
 
 class TestKontakApp(unittest.TestCase):
-
     def test_1_kontak_init(self):
         k = kontak("K01", "Budi", "0877668825")
         self.assertEqual(k.nama, "Budi")
@@ -13,7 +12,7 @@ class TestKontakApp(unittest.TestCase):
             "K02", "Sari", "0987654321",
             hubungan="Teman Kuliah"
         )
-        self.assertEqual(k.kuwargs.get("hubungan"), "Teman Kuliah")
+        self.assertEqual(k.hubungan, "Teman Kuliah")
 
     def test_3_args_total_kontak(self):
         p = PengelolaKontak()
