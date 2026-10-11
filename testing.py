@@ -1,7 +1,6 @@
 import unittest
-from kontak_app.processing import kontak, PengelolaKontak
-from kontak_app.validasi import KontakError, validasi_kontak
-
+from processing import kontak, PengelolaKontak
+from validasi import KontakError, validasi_kontak
 
 class TestKontakApp(unittest.TestCase):
 
@@ -32,7 +31,6 @@ class TestKontakApp(unittest.TestCase):
     def test_5_raise_error(self):
         with self.assertRaises(KontakError):
             validasi_kontak("081234567890", "")
-
 
 if __name__ == "__main__":
     unittest.main()
