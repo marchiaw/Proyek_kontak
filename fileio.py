@@ -8,12 +8,10 @@ def inisialisasi_file(file_path):
     except FileExistsError:
         pass
 
-
 # Mode "a" menambah kontak pada baris baru
 def tambah_kontak_file(file_path, kontak):
     with open(file_path, "a") as file:
         file.write(kontak.format_baris())
-
 
 # Mode "r" untuk membaca dan menangani ValueError
 def baca_kontak_file(file_path):
@@ -26,13 +24,14 @@ def baca_kontak_file(file_path):
                 if not teks:
                     continue
                 try:
-                    id_k, nama, no_hp = teks.split(";")
+                    id_k, nama, no_hp, hubungan = teks.split(";")
                     # Uji validasi tipe data & ukuran
                     validasi_kontak(no_hp, nama)
                     hasil.append({
                         "ID": id_k,
                         "Nama": nama,
-                        "No_hp": no_hp
+                        "No_hp": no_hp,
+                        "Hubungan": hubungan
                     })
                 except (ValueError, KontakError, AssertionError):
                     # Continue apabila ada baris yang rusak maka dilewati
@@ -40,7 +39,6 @@ def baca_kontak_file(file_path):
     except FileNotFoundError:
         print(f"Error: file '{file_path}' tidak ditemukan!")
     return hasil
-
 
 # Mode "w" untuk menulis file ringkasan
 def tulis_laporan(file_laporan, isi):
