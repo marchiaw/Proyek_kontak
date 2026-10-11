@@ -10,7 +10,6 @@ from kontak_app.processing import kontak, PengelolaKontak
 fileData = "data_kontak.txt"
 file_laporan = "laporan_kontak.txt"
 
-
 def main():
     print("<<< Program Pengelola Buku Kontak >>>\n")
 
@@ -29,6 +28,12 @@ def main():
         kontak("K02", "Ucup", "089876543210",
                hubungan="Teman")
     )
+    
+    tambah_kontak_file(
+        fileData,
+        kontak("K03", "Mar", "0898788883210",
+               hubungan="Sahabat")
+    )
 
     # Untuk apabila data rusak saat uji error
     with open(fileData, "a") as file:
@@ -41,7 +46,7 @@ def main():
 
     for d in data_terbaca:
         pengelola.tambah_kontak(
-            kontak(d["ID"], d["Nama"], d["No_hp"])
+            kontak(d["ID"], d["Nama"], d["No_hp"], hubungan=d["Hubungan"])
         )
 
     # Pengolahan data (*args & lambda)
@@ -59,13 +64,13 @@ def main():
     )
 
     for k in kontak_terurut:
-        isi_laporan += f"- {k.nama} {k.nomor_hp}\n"
+        teks_hubungan = f" ({k.hubungan})" if k.hubungan else ""
+        isi_laporan += f"- {k.nama} {k.nomor_hp}{teks_hubungan}\n"
 
     tulis_laporan(file_laporan, isi_laporan)
 
     print("<<< Laporan Berhasil Dibuat >>>")
     print(isi_laporan)
-
 
 if __name__ == "__main__":
     main()
