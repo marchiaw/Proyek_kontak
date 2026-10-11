@@ -2,15 +2,14 @@ class kontak:
     # Untuk menyimpan data entitas satu kontak
 
     # Penggunaan **kwargs
-    def __init__(self, id_kontak, nama, nomor_hp, **kuwargs):
+    def __init__(self, id_kontak, nama, nomor_hp, hubungan=None, **kwargs):
         self.id_kontak = id_kontak
         self.nama = nama
         self.nomor_hp = nomor_hp
-        self.kuwargs = kuwargs
+        self.hubungan = hubungan
 
     def format_baris(self):
-        return f"{self.id_kontak};{self.nama};{self.nomor_hp}\n"
-
+        return f"{self.id_kontak};{self.nama};{self.nomor_hp};{self.hubungan}\n"
 
 class PengelolaKontak:
     # Untuk mengolah kumpulan kontak
